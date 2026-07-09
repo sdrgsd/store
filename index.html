@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no, viewport-fit=cover">
+  <title>POS-KU Retail</title>
+  
+  <link rel="manifest" href="manifest.json">
+  
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="apple-mobile-web-app-title" content="POS-KU">
+  <link class="no-print" rel="apple-touch-icon" href="icon.png">
+
+  <style>
+    body, html {
+      margin: 0;
+      padding: 0;
+      width: 100%;
+      height: 100%;
+      overflow: hidden;
+      background-color: #2563eb;
+    }
+    iframe {
+      width: 100%;
+      height: 100%;
+      border: none;
+    }
+  </style>
+</head>
+<body>
+
+  <iframe src="https://script.google.com/macros/s/AKfycbzR0xoTf_cjrCGs8mMF2R3huh5LX494I_gq9e0MVQOq9pcrLWGJxwutvTPcThF2th88Cg/exec"></iframe>
+
+  <script>
+    // Kode untuk mengaktifkan Service Worker (sw.js)
+    if ('serviceWorker' in navigator) {
+      window.addEventListener('load', () => {
+        navigator.serviceWorker.register('sw.js')
+          .then(reg => console.log('Service Worker aktif!', reg))
+          .catch(err => console.error('Service Worker gagal:', err));
+      });
+    }
+  </script>
+</body>
+</html>
